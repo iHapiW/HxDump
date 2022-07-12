@@ -1,8 +1,8 @@
 hxdump: hxdump.o
-	ld -g -melf_i386 -o hxdump hxdump.o
+	ld -melf_i386 -o hxdump hxdump.o
 
 hxdump.o: hxdump.asm
-	nasm -g -Fdwarf -felf -o hxdump.o hxdump.asm
+	nasm -felf -o hxdump.o hxdump.asm
 
 ifeq ($(PREFIX),)
     PREFIX := /usr/local
